@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Confirm 😏</title>
+
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .box {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 320px;
+      height: 220px;
+      position: relative;
+    }
+
+    button {
+      padding: 12px 22px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    #yesBtn {
+      background: #4CAF50;
+      color: white;
+      margin-right: 10px;
+    }
+
+    #noBtn {
+      background: #f44336;
+      color: white;
+      position: absolute;
+      left: 180px;
+      top: 130px;
+      touch-action: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>Will you marry me rutu......? ❤️</h2>
+
+    <button id="yesBtn" onclick="yesClicked()">YES</button>
+    <button id="noBtn">NO</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const box = document.querySelector(".box");
+
+    function moveButton() {
+      const maxX = box.clientWidth - noBtn.offsetWidth;
+      const maxY = box.clientHeight - noBtn.offsetHeight;
+
+      noBtn.style.left = Math.random() * maxX + "px";
+      noBtn.style.top = Math.random() * maxY + "px";
+    }
+
+    noBtn.addEventListener("mouseover", moveButton);   // Desktop
+    noBtn.addEventListener("touchstart", (e) => {     // Mobile
+      e.preventDefault();
+      moveButton();
+    });
+
+    function yesClicked() {
+      alert("I knew it 😍❤️\n So ready for the Dahej\n1..Land Rover Defender\n2. BMW GSR1250RR \n3. 1 Kg Gold\n4. 3BHK Villa");
+    }
+  </script>
+
+</body>
+</html>
